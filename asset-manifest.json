@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/investment-prediction/static/css/main.05db3ffd.chunk.css",
+    "main.js": "/investment-prediction/static/js/main.8db944be.chunk.js",
+    "main.js.map": "/investment-prediction/static/js/main.8db944be.chunk.js.map",
+    "runtime-main.js": "/investment-prediction/static/js/runtime-main.e84b84cc.js",
+    "runtime-main.js.map": "/investment-prediction/static/js/runtime-main.e84b84cc.js.map",
+    "static/css/2.aa20a1c3.chunk.css": "/investment-prediction/static/css/2.aa20a1c3.chunk.css",
+    "static/js/2.e3cf35de.chunk.js": "/investment-prediction/static/js/2.e3cf35de.chunk.js",
+    "static/js/2.e3cf35de.chunk.js.map": "/investment-prediction/static/js/2.e3cf35de.chunk.js.map",
+    "index.html": "/investment-prediction/index.html",
+    "precache-manifest.c5dd0502df75a5dc5b2a6ea66f703508.js": "/investment-prediction/precache-manifest.c5dd0502df75a5dc5b2a6ea66f703508.js",
+    "service-worker.js": "/investment-prediction/service-worker.js",
+    "static/css/2.aa20a1c3.chunk.css.map": "/investment-prediction/static/css/2.aa20a1c3.chunk.css.map",
+    "static/css/main.05db3ffd.chunk.css.map": "/investment-prediction/static/css/main.05db3ffd.chunk.css.map",
+    "static/js/2.e3cf35de.chunk.js.LICENSE.txt": "/investment-prediction/static/js/2.e3cf35de.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e84b84cc.js",
+    "static/css/2.aa20a1c3.chunk.css",
+    "static/js/2.e3cf35de.chunk.js",
+    "static/css/main.05db3ffd.chunk.css",
+    "static/js/main.8db944be.chunk.js"
+  ]
+}
