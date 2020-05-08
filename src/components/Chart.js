@@ -44,7 +44,9 @@ function Chart({style, data, title}) {
     let options = cloneDeep(baseOptions);
     options.title = {text: title};
     options.xAxis.data = xData;
+    // 第一个数组是收益
     options.series[0].data = seriesData[0]
+    // 第二个数组是指数
     options.series[1].data = seriesData[1]
 
     var myChart = echarts.init(document.getElementById('chart'));

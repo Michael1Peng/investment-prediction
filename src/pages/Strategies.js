@@ -1,33 +1,58 @@
-import React from "react";
+import React, {useState} from "react";
 import {Layout, Menu, Row, Col} from "antd";
 import Chart from "../components/Chart";
 import InvestForm from "../components/InvestForm";
+import RecommendTable from "../components/RecommendTable";
 
 const {Header, Content} = Layout;
 
 function Strategies() {
-  let navItems = ['连跌买进策略', '收益率前n策略', '小市值策略', '单股sma策略']
-  let data = {
-    xData: ['4-12', '4-13', '4-14', '4-15', '4-16'],
-    seriesData: [
-      ['0.1', '0.2', '0.4', '-0.1', '0.2'],
-      ['0.2', '0.1', '0.3', '0', '0.3']
-    ]
-  };
+  // 导航栏数据
+  let navItems = [{
+    title: '连跌买进策略',
+    key: 'one'
+  }, {
+    title: '收益率前n策略',
+    key: 'two'
+  }, {
+    title: '小市值策略',
+    key: 'three'
+  }, {
+    title: '单股sma策略',
+    key: 'four'
+  }]
+  const [activeTabs, setActiveTabs] = useState('one')
+
+  function clickTab(e) {
+    setActiveTabs(e.key)
+  }
+
+  // 图表数据
+  const [data, setData] = useState({xData: [], seriesData: [[], []]})
+
+  const [rate, setRate] = useState(0)
+  const [recommendations, setRecommendations] = useState([[], []])
+
+  function onResponse(res) {
+    setData(res.chartData)
+    setRate(res.rate)
+    setRecommendations(res.answer)
+  }
 
   return <Layout>
     <Header>
-      <Menu mode='horizontal'>
-        {navItems.map(i => <Menu.Item key={i}>{i}</Menu.Item>)}
+      <Menu mode='horizontal' selectedKeys={[activeTabs]} onClick={clickTab}>
+        {navItems.map(i => <Menu.Item key={i.key}>{i.title}</Menu.Item>)}
       </Menu>
     </Header>
     <Content style={{padding: '15px', 'background-color': 'white'}}>
       <Row>
         <Col span={16}>
           <Chart data={data}/>
+          <RecommendTable recommendations={recommendations}/>
         </Col>
         <Col span={6}>
-          <InvestForm/>
+          <InvestForm tab={activeTabs} onResponse={onResponse} rate={rate}/>
         </Col>
       </Row>
     </Content>
